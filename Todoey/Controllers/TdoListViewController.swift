@@ -11,7 +11,8 @@ import UIKit
 class TodoListViewController: UITableViewController {
    
     var itemArray = [Item]()
-    let  dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.pList")
+    
+   let context
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +66,9 @@ class TodoListViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Item", style: .default){ (action) in
             //what wii happen once the user clicks the Add Item Button on our alert
             
-          let newItem = Item()
+         
+            let newIem = Item(context: self.context)
+            
             newItem.title = textField.text!
             
             self.itemArray.append(newItem)
@@ -87,13 +90,13 @@ class TodoListViewController: UITableViewController {
 //MARK - Model Manipulation Methods
 
 func saveItems() {
-    let encoder = PropertyListEncoder()
+    
+      let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     do {
-        let data = try encoder.encode(itemArray)
-        try data.write (to: dataFilePath!)
+        context.save()
     } catch {
-        print("Error encoding item array,\(error)")
+      
     }
     
     self.tableView.reloadData()
