@@ -7,22 +7,42 @@
 //
 
 import UIKit
+import RealmSwift
+import ChameleonFramework
 
-class TodoListViewController: UITableViewController {
+class TodoListViewController: SwipeTableViewController {
    
-    var itemArray = [Item]()
+    var todoItems : Results<Item>?
     
-   let context
+    let realm = try! Realm()
+    
+     @IBOutlet weak var searchBar: UISearchBar!
+    
+    var selectedCategory : Category? {
+        didSet{
+            loadItems()
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(dataFilePath)
+        tableView.separatorStyle = .none
         
-        loadItems()
-        
-      
     }
+    
+    
+    override func viewWillApper(_ animated: Bool) {
+        title = selectedCategory?.name
+        guard let colourHex = selectedCategory?.colour else { fatalError()}
+            
+            updateNavBar(withHexCode : colourHex)
+        }
+        override func viewWillDissapear(_ animated: Bool) {
+            updateNavBar (withHexCode: "1D9BF6")
+        }
+    
 // MARK - TableView DataSource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
