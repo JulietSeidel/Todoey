@@ -14,6 +14,7 @@
 		C52BF7EA2202FF9C000124A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C52BF7E92202FF9C000124A8 /* Assets.xcassets */; };
 		C52BF7ED2202FF9C000124A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C52BF7EB2202FF9C000124A8 /* LaunchScreen.storyboard */; };
 		C5783CAE2208429D00A12115 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5783CAC2208429D00A12115 /* DataModel.xcdatamodeld */; };
+		C57C22FF223F9F6900D69E6D /* CategoryViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57C22FE223F9F6900D69E6D /* CategoryViewControllers.swift */; };
 		C589C442223BA7B400834A60 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C589C441223BA7B400834A60 /* Data.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		C52BF7EC2202FF9C000124A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C52BF7EE2202FF9C000124A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5783CAD2208429D00A12115 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		C57C22FE223F9F6900D69E6D /* CategoryViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewControllers.swift; sourceTree = "<group>"; };
 		C589C441223BA7B400834A60 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				C52BF7E42202FF9A000124A8 /* TdoListViewController.swift */,
+				C57C22FE223F9F6900D69E6D /* CategoryViewControllers.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				C5783CAE2208429D00A12115 /* DataModel.xcdatamodeld in Sources */,
 				C52BF7E32202FF9A000124A8 /* AppDelegate.swift in Sources */,
 				C589C442223BA7B400834A60 /* Data.swift in Sources */,
+				C57C22FF223F9F6900D69E6D /* CategoryViewControllers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
